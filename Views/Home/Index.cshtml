@@ -1,0 +1,28 @@
+﻿@model CarFinance
+@{
+    ViewData["Title"] = "Car Finance Calculator";
+}
+<div class="p-5 ms-0 mb-4 shadow" style="background-color:cadetblue;border-radius:20px;">
+    <h1 class="col-12">Car Finance Calculator</h1>
+</div>
+<div class="row">
+    <form asp-action="Index" method="post" class="col-6">
+        <div asp-validation-summary="All"></div>
+        <div>
+            <label asp-for="LoanAmount">Monthly Investment:</label> <input asp-for="LoanAmount" />
+        </div>
+        <div>
+            <label asp-for="YearlyInterestRate">Yearly Interest Rate:</label> <input asp-for="YearlyInterestRate" />
+        </div>
+        <div>
+            <label asp-for="Years">Number of Years:</label> <input asp-for="Years" />
+        </div>
+        <div>
+            <label>Loan Calculator:</label>
+            <label>@ViewBag.FV.ToString("c2")</label>
+        </div>
+        <button type="submit">Calculate</button> <a asp-action="Index">Clear</a>
+    </form>
+    <img src="~/Images/image1.jpg" alt="" class="col-6 img-fluid" />
+</div>
+
